@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  consumer:
+    build:
+      context: ./consumer
+      dockerfile: Dockerfile
+    container_name: consumer
+    env_file:
+      - consumer/.env
+    ports:
+      - "5002:5002"
+
+  producer:
+    build:
+      context: ./producer
+    container_name: producer
+    env_file:
+      - producer/.env
+    ports:
+      - "5001:5001"
