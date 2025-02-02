@@ -1,0 +1,3 @@
+bucket         = "terraform-state-stage"
+prefix         = "iac/stage"
+credentials    = "./kafka-dev-service-account-key.json"

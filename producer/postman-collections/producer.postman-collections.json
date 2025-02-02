@@ -1,0 +1,34 @@
+{
+  "info": {
+    "_postman_id": "958946fe-4c83-4e7c-94ce-9c447d3564fc",
+    "name": "irys-kafka-producer",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "31406942"
+  },
+  "item": [
+    {
+      "name": "bpms-publish",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"data\": \"Message sending to FastPost Kafka cluster\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5005/api/bpms/message/publish",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5005",
+          "path": ["api", "bpms", "message", "publish"]
+        }
+      },
+      "response": []
+    }
+  ]
+}

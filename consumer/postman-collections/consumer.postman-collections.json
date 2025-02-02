@@ -1,0 +1,414 @@
+{
+  "info": {
+    "_postman_id": "bab465c7-bb4d-4bea-93ed-1a8c477da647",
+    "name": "kafka-consumer",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "31406942"
+  },
+  "item": [
+    {
+      "name": "accounting",
+      "item": [
+        {
+          "name": "inbound-kafka-accounting-journal",
+          "item": [
+            {
+              "name": "find all",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/api/inbound-kafka-accounting-journal",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "inbound-kafka-accounting-journal"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "execute own query (DQL)",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "if (pm.response.code == 200 || pm.response.code == 201) {",
+                      "    console.log(\"response: \", responseBody);",
+                      "} else {",
+                      "    console.error('Failed:', pm.response.json());",
+                      "}"
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"sqlQuery\": \"SELECT COUNT(*) FROM IRYS_DEV.inbound_Kafka_Accounting_Journal\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/api/inbound-kafka-accounting-journal/custom-query",
+                  "host": ["{{base_url}}"],
+                  "path": [
+                    "api",
+                    "inbound-kafka-accounting-journal",
+                    "custom-query"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "find by id",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/api/inbound-kafka-accounting-journal/91ab2fb6-8130-4b0d-91e1-4cb7573936f1",
+                  "host": ["{{base_url}}"],
+                  "path": [
+                    "api",
+                    "inbound-kafka-accounting-journal",
+                    "91ab2fb6-8130-4b0d-91e1-4cb7573936f1"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete by id",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/api/inbound-kafka-accounting-journal/91ab2fb6-8130-4b0d-91e1-4cb7573936f1",
+                  "host": ["{{base_url}}"],
+                  "path": [
+                    "api",
+                    "inbound-kafka-accounting-journal",
+                    "91ab2fb6-8130-4b0d-91e1-4cb7573936f1"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "accounting-journal-header",
+          "item": [
+            {
+              "name": "find all",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/api/accounting-journal-header",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "accounting-journal-header"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "execute own query (DQL)",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "if (pm.response.code == 200 || pm.response.code == 201) {",
+                      "    console.log(\"response: \", responseBody);",
+                      "} else {",
+                      "    console.error('Failed:', pm.response.json());",
+                      "}"
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"sqlQuery\": \"SELECT COUNT(*) FROM IRYS_DEV.accounting_journal_header\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/api/accounting-journal-header/custom-query",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "accounting-journal-header", "custom-query"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "find by id",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/api/accounting-journal-header/edbd8409-e100-4290-beb0-c296145924a4",
+                  "host": ["{{base_url}}"],
+                  "path": [
+                    "api",
+                    "accounting-journal-header",
+                    "edbd8409-e100-4290-beb0-c296145924a4"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete by id",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/api/accounting-journal-header/edbd8409-e100-4290-beb0-c296145924a4",
+                  "host": ["{{base_url}}"],
+                  "path": [
+                    "api",
+                    "accounting-journal-header",
+                    "edbd8409-e100-4290-beb0-c296145924a4"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "gl-extract",
+          "item": [
+            {
+              "name": "find all",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/api/gl-extract",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "gl-extract"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "execute own query (DQL)",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "if (pm.response.code == 200 || pm.response.code == 201) {",
+                      "    console.log(\"response: \", responseBody);",
+                      "} else {",
+                      "    console.error('Failed:', pm.response.json());",
+                      "}"
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"sqlQuery\": \"SELECT COUNT(*) FROM IRYS_DEV.gl_extract\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/api/gl-extract/custom-query",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "gl-extract", "custom-query"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "find by id",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/api/gl-extract/b5bd9cf3-ef74-4571-9e0b-94e1640c2242",
+                  "host": ["{{base_url}}"],
+                  "path": [
+                    "api",
+                    "gl-extract",
+                    "b5bd9cf3-ef74-4571-9e0b-94e1640c2242"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete by id",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/api/gl-extract/b5bd9cf3-ef74-4571-9e0b-94e1640c2242",
+                  "host": ["{{base_url}}"],
+                  "path": [
+                    "api",
+                    "gl-extract",
+                    "b5bd9cf3-ef74-4571-9e0b-94e1640c2242"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "accounting-journal-line",
+          "item": [
+            {
+              "name": "find all",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/api/accounting-journal-line",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "accounting-journal-line"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "execute own query (DQL)",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "if (pm.response.code == 200 || pm.response.code == 201) {",
+                      "    console.log(\"response: \", responseBody);",
+                      "} else {",
+                      "    console.error('Failed:', pm.response.json());",
+                      "}"
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"sqlQuery\": \"SELECT COUNT(*) FROM IRYS_DEV.accounting_journal_line\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/api/accounting-journal-line/custom-query",
+                  "host": ["{{base_url}}"],
+                  "path": ["api", "accounting-journal-line", "custom-query"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "find by id",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/api/accounting-journal-line/652062d4-f514-4369-bcd5-d78dd287b277",
+                  "host": ["{{base_url}}"],
+                  "path": [
+                    "api",
+                    "accounting-journal-line",
+                    "652062d4-f514-4369-bcd5-d78dd287b277"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete by id",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/api/accounting-journal-line/652062d4-f514-4369-bcd5-d78dd287b277",
+                  "host": ["{{base_url}}"],
+                  "path": [
+                    "api",
+                    "accounting-journal-line",
+                    "652062d4-f514-4369-bcd5-d78dd287b277"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "health-check",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "if (pm.response.code == 200 || pm.response.code == 201) {",
+              "    console.log(\"response: \", responseBody);",
+              "} else {",
+              "    console.error('Failed:', pm.response.json());",
+              "}"
+            ],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/health",
+          "host": ["{{base_url}}"],
+          "path": ["api", "health"]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:5002"
+    }
+  ]
+}
